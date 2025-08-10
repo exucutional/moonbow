@@ -43,3 +43,8 @@
 *.cache
 *.vscode
 build
+.log*
+
+external/.bootstrap.json
+external/archives/
+external/src/
