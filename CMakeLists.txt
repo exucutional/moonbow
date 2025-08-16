@@ -6,10 +6,11 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(SRC_FILES
     "src/main.cpp"
+    "src/utils.cpp"
 )
 
 set(HEADER_FILES
-    ""
+    "src/utils.h"
 )
 
 set(SHADER_FILES
@@ -89,7 +90,7 @@ if(WIN32)
     set_property(TARGET UpdateAssimpLibsDebugSymbolsAndDLLs PROPERTY FOLDER "external")
   endif()
 endif()
-set_property(TARGET uninstall PROPERTY FOLDER "external")
+# set_property(TARGET uninstall PROPERTY FOLDER "external")
 
 # disable warnings in third-party code
 if(MSVC)
@@ -101,4 +102,4 @@ target_link_libraries(${PROJECT_NAME} PUBLIC glfw)
 target_link_libraries(${PROJECT_NAME} PUBLIC LUtils)
 target_link_libraries(${PROJECT_NAME} PUBLIC LVKLibrary)
 target_link_libraries(${PROJECT_NAME} PUBLIC LVKstb)
-#target_link_libraries(${PROJECT_NAME} PUBLIC ktx)
+target_link_libraries(${PROJECT_NAME} PUBLIC ktx)
